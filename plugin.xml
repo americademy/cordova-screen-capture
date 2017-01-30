@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.codeverse.plugins.screen-capture" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>ScreenCapture</name>
+    <dependency id="cordova-plugin-add-swift-support" version="1.6.1"/>
+    <js-module name="ScreenCapture" src="www/ScreenCapture.js">
+        <clobbers target="cordova.screenCapture" />
+    </js-module>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="ScreenCapture">
+                <param name="ios-package" value="ScreenCapture" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/ScreenCapture.swift" />
+    </platform>
+</plugin>
